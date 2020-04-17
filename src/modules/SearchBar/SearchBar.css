@@ -1,0 +1,11 @@
+div {
+    background-color: #F44336;
+    color: white;
+    height: 3em;
+    padding-top:  5px;
+}
+
+div input:first-of-type {
+    margin-left: 10px;
+}
+
