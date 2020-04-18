@@ -16,23 +16,32 @@ class SearchBar extends React.Component {
     }
 
     handleClick(event) {
-        alert('Buscar: ' + this.state.movieName);
+        /*TO-DO */
+        /*Search movie results*/
+        if (this.state.movieName==='') {
+            return;
+        }
+        alert('Película: ' + this.state.movieName);
     }
 
     render() {
         const searchButtonText = 'Buscar';
         return (
-            <div>
-
-                <label>Nombre: 
-                    <input 
-                        type = 'text' 
-                        value = {this.state.movieName}
-                        onChange={this.handleChange}
+            <div className='searchBarContainer'>
+                <h1 classNAme='app-title'>MoviesApp</h1>
+                <div className='searchBar'>
+                    <label>Nombre:
+                        <input 
+                            type = 'text' 
+                            value = {this.state.movieName}
+                            onChange={this.handleChange}
+                        />
+                    </label>
+                    <SearchButton 
+                        searchButtonText={searchButtonText}
+                        onClick={this.handleClick}
                     />
-                </label>
-
-                <SearchButton searchButtonText={searchButtonText}></SearchButton>
+                </div>
             </div>
         )
     }
