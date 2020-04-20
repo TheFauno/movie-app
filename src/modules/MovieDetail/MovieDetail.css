@@ -1,0 +1,43 @@
+.movie-detail-box {
+    border: solid;
+    border-width: 3px;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    margin-top: 5vh;
+}
+
+.movie-detail-box-title {
+    text-align: center;
+}
+
+.movie-detail-box-ratings {
+    text-align: center;
+    height: 5vh;
+}
+
+.poster-container {
+    text-align: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.movie-metadata > p {
+    margin-bottom: 3vh;
+}
+
+.rating-box {
+    display: inline;
+    border: 1px solid;
+    padding: 1vh;
+}
+.rating-box:first-of-type {
+    border-right: none;
+}
+.rating-box:last-of-type {
+    border-left: none;
+}
+
+.favourite-container {
+    text-align: center;
+    height: 5vh;
+}
