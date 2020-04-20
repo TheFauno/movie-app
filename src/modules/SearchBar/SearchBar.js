@@ -1,45 +1,35 @@
 import React from 'react';
 import './SearchBar.css';
 
-import SearchButton from './../SearchButton/SearchButton';
-
 class SearchBar extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {movieName: ''};
-        this.handleChange = this.handleChange.bind(this);
-        this.handleClick = this.handleClick.bind(this);
+        this.state = { searchString: '' };
     }
 
     handleChange(event) {
-        this.setState({movieName: event.target.value});
+        this.setState({ searchString: event.target.value });
     }
 
-    handleClick(event) {
-        /*TO-DO */
-        /*Search movie results*/
-        if (this.state.movieName==='') {
-            return;
-        }
-        alert('Película: ' + this.state.movieName);
+    handleClick() {
+        this.props.onSearch(this.state.searchString);
     }
 
     render() {
-        const searchButtonText = 'Buscar';
         return (
             <div className='searchBarContainer'>
-                <h1 classNAme='app-title'>MoviesApp</h1>
+                <h1 className='app-title'>MoviesApp</h1>
                 <div className='searchBar'>
                     <label>Nombre:
-                        <input 
-                            type = 'text' 
-                            value = {this.state.movieName}
-                            onChange={this.handleChange}
+                        <input
+                            type='text'
+                            onChange={this.handleChange.bind(this)}
                         />
                     </label>
-                    <SearchButton 
-                        searchButtonText={searchButtonText}
-                        onClick={this.handleClick}
+                    <input
+                        type='button'
+                        value='Buscar'
+                        onClick={this.handleClick.bind(this)}
                     />
                 </div>
             </div>
