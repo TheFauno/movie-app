@@ -2,7 +2,6 @@ export function IsFavourite(imdbID) {
   try {
     const favouriteslocalStorageArray = localStorage.getItem('favouriteMovies');
     const isFavourite = favouriteslocalStorageArray.includes(imdbID);
-    console.log('Es favorito?'+isFavourite);
     return isFavourite;
   }
   catch (e) {
