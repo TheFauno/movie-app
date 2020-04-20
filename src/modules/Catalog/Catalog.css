@@ -3,3 +3,53 @@
     padding: 5vh;
 }
 
+.movies-container {
+    margin: 0 auto;
+    margin-top: 5vh;
+}
+
+.movie-box {
+    height: 20vh;
+    display: flex;
+    border: solid;
+    border-width: 3px;
+}
+
+.movie-box:hover{
+    cursor: pointer;
+    background-color: #E0E0E0;
+}
+
+.movie-box:not(:last-of-type) {
+    margin-bottom: 5vh;
+}
+
+.results-container {
+    margin-top: 3vh;
+}
+
+.results-container > span:nth-last-of-type(1) {
+    margin-left: 3vh;
+}
+
+.movie-container {
+    display: block;
+}
+
+.movie-poster {
+    height: inherit;
+    width: 15vh;
+}
+
+.movie-metadata {
+    width: auto;
+    height: inherit;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.movie-metadata h3, .movie-metadata p {
+    margin: 0;
+    margin-left: 3vh;
+}
