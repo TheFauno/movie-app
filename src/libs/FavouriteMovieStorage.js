@@ -1,12 +1,9 @@
 export function IsFavourite(imdbID) {
-  try {
-    const favouriteslocalStorageArray = localStorage.getItem('favouriteMovies');
-    const isFavourite = favouriteslocalStorageArray.includes(imdbID);
+    if (imdbID === null) { imdbID = '' }
+    let favouriteslocalStorageArray = localStorage.getItem('favouriteMovies');
+    favouriteslocalStorageArray = favouriteslocalStorageArray ? favouriteslocalStorageArray.split(',') : [];
+    const isFavourite = imdbID === '' ? false : favouriteslocalStorageArray.includes(imdbID);
     return isFavourite;
-  }
-  catch (e) {
-    return null;
-  }
 }
 
 function RemoveFromStorage(imdbID) {
@@ -24,6 +21,6 @@ function AddToStorage(imdbID) {
 }
 
 export function ToogleFavourite(imdbID) {
-  let isFavourite = IsFavourite(imdbID);
+  const isFavourite = IsFavourite(imdbID);
   isFavourite ? RemoveFromStorage(imdbID) : AddToStorage(imdbID)
 }

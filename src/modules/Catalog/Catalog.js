@@ -59,6 +59,10 @@ class Catalog extends React.Component {
                                     <div className='movie-metadata'>
                                         <h3>{movie.Title}</h3>
                                         <p>Año: {movie.Year}</p>
+                                        {
+                                            IsFavourite(movie.imdbID) === false ? null :
+                                            <p>Favourite movie</p>
+                                        }
                                     </div>
                                 </div>
                                 )
