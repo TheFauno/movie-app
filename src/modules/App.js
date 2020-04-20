@@ -21,7 +21,7 @@ class App extends React.Component {
   }
 
   getMovies(searchString = '') {
-    let url = 'http://www.omdbapi.com/?i=tt3896198&apikey=896adc16&type=movie';
+    let url = 'http://www.omdbapi.com/?i=tt3896198&apikey='+process.env.REACT_APP_OMDBAPI_KEY+'&type=movie';
     this.setState({ searchString: searchString })
     if (searchString !== '') {
       url = url + '&s=' + searchString;
@@ -47,7 +47,7 @@ class App extends React.Component {
 
   callbackSelectedDetailMovie(selectedImdbID) {
     const imdbID = (this.state.isDefaultResponse ? this.state.apiResponse : this.state.apiResponse.Search.find((movie, index) => movie.imdbID === selectedImdbID)).imdbID;
-    const url = 'http://www.omdbapi.com/?apikey=896adc16&plot=full&type=movies&i=';
+    const url = 'http://www.omdbapi.com/?apikey='+process.env.REACT_APP_OMDBAPI_KEY+'&plot=full&type=movies&i=';
     fetch(url+imdbID)
       .then(res => res.json())
       .then((data) => {
