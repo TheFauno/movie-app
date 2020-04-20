@@ -44,7 +44,7 @@ This App uses ombdbAPI to deliver movies info and let the user add whathever mov
 
 ```
 
-## Deployment
+## Local Deployment
 
 ### First steps
 Configure environment variables
@@ -71,6 +71,5 @@ The application uses:
 
 The application uses this environment variables:
 ```
-REACT_APP_OMDBAPI_KEY=[yourOmdbAPIKey]
-REACT_APP_NAME=[youAppName]
+  REACT_APP_OMDBAPI_KEY=[yourOmdbAPIKey]
 ```
